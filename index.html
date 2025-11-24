@@ -61,20 +61,24 @@
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const attendingSelect = document.getElementById('attending');
-      const detailsSection = document.getElementById('attending-details');
+        document.addEventListener('DOMContentLoaded', function() {
+            const attendingSelect = document.getElementById('attending');
+            const detailsSection = document.getElementById('attending-details');
 
-      attendingSelect.addEventListener('change', function() {
-        if (this.value === 'Yes') {
-          detailsSection.style.display = 'block';
-          setTimeout(() => detailsSection.classList.add('show'), 10);
-        } else {
-          detailsSection.classList.remove('show');
-          setTimeout(() => (detailsSection.style.display = 'none'), 400);
-        }
-      });
-    });
+            function updateAttendingFields() {
+                if (attendingSelect.value === 'Yes') {
+                    detailsSection.style.display = 'block';
+                    setTimeout(() => detailsSection.classList.add('show'), 10);
+                } else {
+                    detailsSection.classList.remove('show');
+                    setTimeout(() => (detailsSection.style.display = 'none'), 400);
+                }
+            }
+
+            updateAttendingFields();
+
+            attendingSelect.addEventListener('change', updateAttendingFields);
+        });
     </script>
 </head>
 <body id="top">
