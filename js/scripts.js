@@ -245,6 +245,11 @@ $(document).ready(function () {
                             $('#modal-message').text('We’re sorry you can’t make it, but we appreciate your RSVP and hope to see you soon!');
                         }
                         $('#rsvp-modal').modal('show');
+
+                        $('#attendeeEmail').val('');
+                        $('#attendeeName').val('');
+                        $('#attendeeDietaryRequirements').val('');
+                        $('#attendeeDrinks').val('');
                     }
                 })
                 .fail(function (data) {
