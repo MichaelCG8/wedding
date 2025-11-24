@@ -235,6 +235,15 @@ $(document).ready(function () {
                         $('#alert-wrapper').html(alert_markup('danger', data.message));
                     } else {
                         $('#alert-wrapper').html('');
+
+                        var attending = $('#attending').val();
+                        if (attending === "Yes") {
+                            $('#modal-title').text('Thank you!');
+                            $('#modal-message').text('We are excited to see you on our big day!');
+                        } else {
+                            $('#modal-title').text('Thank you for letting us know');
+                            $('#modal-message').text('We’re sorry you can’t make it, but we appreciate your RSVP and hope to see you soon!');
+                        }
                         $('#rsvp-modal').modal('show');
                     }
                 })
