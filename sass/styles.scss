@@ -816,6 +816,34 @@ Google map
 }
 
 /* ==========================================================================
+Gifts message
+========================================================================== */
+#gifts {
+  position: relative;
+}
+#gifts h3 {
+  color: white;
+}
+#gifts p {
+  color: white;
+}
+#gifts-canvas {
+  height: 300px;
+  width: 100%;
+  background-color: rgba(55, 36, 40, 1.0);
+}
+#gifts-content-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  pointer-events: none;
+}
+
+/* ==========================================================================
 RSVP form
 ========================================================================== */
 .rsvp {
