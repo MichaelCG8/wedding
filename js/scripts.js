@@ -43,7 +43,7 @@ $(document).ready(function () {
         offset: '75%'
     });
     $('.wp9').waypoint(function () {
-        $('.wp9').addClass('animated fadeInUp');
+        $('.wp9').addClass('animated fadeInLeft');
     }, {
         offset: '75%'
     });
