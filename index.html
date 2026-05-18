@@ -60,26 +60,6 @@
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" onerror="loadCssFromCDN('font-awesome.css')">
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const attendingSelect = document.getElementById('attending');
-            const detailsSection = document.getElementById('attending-details');
-
-            function updateAttendingFields() {
-                if (attendingSelect.value === 'Yes') {
-                    detailsSection.style.display = 'block';
-                    setTimeout(() => detailsSection.classList.add('show'), 10);
-                } else {
-                    detailsSection.classList.remove('show');
-                    setTimeout(() => (detailsSection.style.display = 'none'), 400);
-                }
-            }
-
-            updateAttendingFields();
-
-            attendingSelect.addEventListener('change', updateAttendingFields);
-        });
-    </script>
 </head>
 <body id="top">
 <!--[if lt IE 8]>
@@ -94,13 +74,10 @@
                 <div class="header-nav">
                     <nav>
                         <ul class="primary-nav">
-                            <li><a href="#intro">How we met</a></li>
-                            <li><a href="#eng-pics">Engagement</a></li>
                             <li><a href="#video-bg" class="login">Venue</a></li>
                             <li><a href="#timeline">Timeline</a></li>
                         </ul>
                         <ul class="member-actions">
-                            <li><a href="#rsvp" class="btn-white btn-small">RSVP</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -135,103 +112,18 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
-                <h3>We're getting married!</h3>
-                <p>We would love for you to be a part of our day on Saturday 27<sup>th</sup> June 2026</p>
+                <h3>27<sup>th</sup> June 2026</h3>
+                <p>We're so glad you can celebrate with us, here's some useful information for the day. Arrival is from 12pm for a 1pm ceremony - the full timeline is below. There is no strict dress code, normal smart wedding attire is fine. The venue does not have good phone reception, so if you'd like to arrange a taxi home it would be best to either pre-book or speak to one of the Bridesmaids and Groomsmen on the day, who will have access to the venue wifi. Harburn Estate has a few entrances, see the map below for the correct one to use, which will be different from what Google Maps recommends. Most importantly, the bar will accept cash or card, so go wild either way! For those of you bringing young children, there is a quiet space available for naps, speak to someone in the wedding party for access.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center" style="margin-top: 30px; padding: 60px 20px; background: #f5f5f5; border: 2px dashed #ccc; color: #999;">
+                <p style="font-size: 1.2em; margin: 0;">[Venue map placeholder &mdash; map showing entrances and event locations to be added here]</p>
             </div>
         </div>
     </div>
 </section>
 
-<section id="intro">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <h3 class="header">How we met</h3>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 hidden-sm hidden-xs"><img src="img/aga.jpg" class="wp1"></div>
-            <div class="col-md-6">
-                <p>
-                It's a Tinder love story!<br><br>
-                After a few back and forths we met up at Southpour in Edinburgh for drinks.<br>
-                There was a quiz on, perfect for breaking the ice! But we quickly got distracted and didn't do very well...<br>
-                After getting kicked out when the bar closed, and after getting kicked out when the <i>second</i> bar closed, we knew we were on to something good :)
-                </p>
-            </div>
-            <div class="col-md-3 hidden-sm hidden-xs"><img src="img/michael.jpg" class="wp2"></div>
-        </div>
-        <div class="row">
-            <div class="col-sm-4 col-sm-push-2 col-xs-6 hidden-md hidden-lg"><img src="img/aga.jpg" class="wp10"></div>
-            <div class="col-sm-4 col-sm-push-2 col-xs-6 hidden-md hidden-lg"><img src="img/michael.jpg" class="wp11"></div>
-        </div>
-    </div>
-</section>
-
-<section id="eng-pics" class="section-padding">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <h3 class="header">Engagement Pics</h3>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-2">
-                <a class="fancybox" rel="group" href="img/eng_pics/1.jpg">
-                    <div class="img-wrap">
-                        <div class="overlay">
-                            <i class="fa fa-search"></i>
-                        </div>
-                        <img src="img/eng_pics/1.jpg" alt=""/>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-2">
-                <a class="fancybox" rel="group" href="img/eng_pics/2.jpg">
-                    <div class="img-wrap">
-                        <div class="overlay">
-                            <i class="fa fa-search"></i>
-                        </div>
-                        <img src="img/eng_pics/2.jpg" alt=""/>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-2">
-                <a class="fancybox" rel="group" href="img/eng_pics/3.jpg">
-                    <div class="img-wrap">
-                        <div class="overlay">
-                            <i class="fa fa-search"></i>
-                        </div>
-                        <img src="img/eng_pics/3.jpg" alt=""/>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-2">
-                <a class="fancybox" rel="group" href="img/eng_pics/4.jpg">
-                    <div class="img-wrap">
-                        <div class="overlay">
-                            <i class="fa fa-search"></i>
-                        </div>
-                        <img src="img/eng_pics/4.jpg" alt=""/>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row hidden-lg hidden-md hidden-xs">
-            <div class="col-xs-12 section-border section-padding"></div>
-        </div>
-    </div>
-    <!--<div class="row">
-        <div class="col-md-12">
-            <div class="diamond floating-logo">
-                <img src="img/sketch-logo.png" alt="Sketch Logo">
-                <div class="ring"></div>
-            </div>
-        </div>
-    </div>-->
-</section>
 
 <section id="video-bg">
     <video autoplay muted loop playsinline id="bgndVideo">
@@ -267,7 +159,7 @@
         <div class="row">
             <div class="col-md-6 col-sm-12 col-xs-12 leftcol">
                 <div class="wp3">
-                    <h5>Day Guests Arrival <span class="time">12:30PM</span></h5>
+                    <h5>Day Guests Arrival <span class="time">12PM</span></h5>
                     <p> </p>
                 </div>
                 <div class="wp5">
@@ -327,107 +219,6 @@
     </div>
 </section>
 
-<section class="rsvp text-center" id="rsvp">
-
-    <div id="rsvp-modal" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
-                    </button>
-                    <div class="section-padding">
-                        <h3 id="modal-title">Thank you!</h3>
-                        <p id="modal-message">We are excited to see you on our big day!</p>
-                        <p id="modal-message">If you'd like to RSVP for someone else in your group, close this popup and enter their details.</p>
-                        <div id="add-to-cal"></div>
-                    </div>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <h3>So, will you join us?</h3>
-                <p>We would greatly appreciate if you could RSVP by Sunday 25th January</p>
-                <p>Please RSVP separately for each person attending, including kids</p>
-                <form id="rsvp-form" class="rsvp-form"
-                      action=""
-                      method="POST">
-
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group">
-                                <i class="fa fa-envelope"></i><input type="email" name="email" id="attendeeEmail" class=""
-                                                                     placeholder="Your email"
-                                                                     required>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group">
-                                <i class="fa fa-user"></i><input name="name" id="attendeeName" class=""
-                                                                 placeholder="Your name"
-                                                                 required>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-12 col-sm-12">
-                            <div class="form-input-group">
-                                <i class="fa fa-check-circle"></i>
-                                <select name="attending" id="attending" class="" required>
-                                    <option value="" disabled selected>Will you be attending?</option>
-                                    <option value="Yes">Yes, I'll be there!</option>
-                                    <option value="No">Sorry, I can't make it</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="attending-details" style="display: none;">
-                        <div class="row">
-                            <div class="col-md-6 col-sm-6">
-                                <div class="form-input-group">
-                                    <i class="fa fa-cutlery"></i><input name="dietaryRequirements" id="attendeeDietaryRequirements" class=""
-                                                                     placeholder="Dietary requirements"
-                                                                     >
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                                <div class="form-input-group">
-                                    <i class="fa fa-glass"></i><input name="drinks" id="attendeeDrinks"
-                                                                    class=""
-                                                                    placeholder="What do you tend to drink?"
-                                                                    >
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-12 col-sm-12">
-                            <div class="form-input-group">
-                                <i class="fa fa-key"></i><input name="invite_code" id="invite_code"
-                                                                class="" min="0"
-                                                                placeholder="Invite code"
-                                                                required>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-12" id="alert-wrapper"></div>
-                    </div>
-                    <button class="btn-fill rsvp-btn">
-                        Submit
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
 
 <footer>
     <div class="container">
