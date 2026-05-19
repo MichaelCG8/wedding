@@ -124,7 +124,7 @@
         </div>
         <div class="row">
             <div class="col-md-12 text-center" style="margin-top: 20px; margin-bottom: 20px;">
-                <a href="img/seating-plan.pdf" target="_blank" class="btn btn-fill">See the dinner seating plan</a>
+                <a href="javascript:void(0)" class="btn btn-fill" data-toggle="modal" data-target="#seating-plan-modal">See the dinner seating plan</a>
             </div>
         </div>
         <div class="row">
@@ -172,7 +172,7 @@
                 </div>
                 <div class="wp9">
                     <h5>Dinner <span class="time">5:30PM</span></h5>
-                    <p><a href="img/seating-plan.pdf" target="_blank"><strong>Seating Plan &rarr;</strong></a><br>Our meal is being provided by Edinburgh Food Social, who run several food related social projects in the city. We'll be treated to a varied spread on the tables that you can help yourself to! If you have any dietary requirements, please let us know in the RSVP.</p>
+                    <p><a href="javascript:void(0)" data-toggle="modal" data-target="#seating-plan-modal"><strong>Seating Plan &rarr;</strong></a><br>Our meal is being provided by Edinburgh Food Social, who run several food related social projects in the city. We'll be treated to a varied spread on the tables that you can help yourself to! If you have any dietary requirements, please let us know in the RSVP.</p>
                 </div>
             </div>
             <div class="col-md-6 col-sm-12 col-xs-12 rightcol">
@@ -219,6 +219,23 @@
     </div>
 </section>
 
+
+<div class="modal fade" id="seating-plan-modal" tabindex="-1" role="dialog" aria-labelledby="seating-plan-title">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="seating-plan-title">Dinner Seating Plan</h4>
+            </div>
+            <div class="modal-body text-center">
+                <img src="img/seating-plan.jpg" alt="Dinner seating plan" style="max-width:100%; height:auto;">
+            </div>
+            <div class="modal-footer text-center">
+                <a href="img/seating-plan.jpg" download class="btn btn-fill"><i class="fa fa-download"></i>&nbsp;&nbsp;Download</a>
+            </div>
+        </div>
+    </div>
+</div>
 
 <footer>
     <div class="container">
