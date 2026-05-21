@@ -776,25 +776,10 @@ Google map
   height: 400px;
   width: 100%;
   background-color: rgba(55, 36, 40, 1.0);
+  color: #fff;
 }
-#map-content-wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  pointer-events: none;
-}
-#map-content {
-  margin-top: 0px;
-  padding: 50px 60px;
-  max-width: 600px;
-  width: 90%;
-  background: #fff;
-  -webkit-transition: opacity 0.5s, visibility 0.6s, margin-top 0.5s;
-  transition: opacity 0.5s, visibility 0.6s, margin-top 0.5s;
+#map-canvas h5, #map-canvas p {
+  color: #fff;
 }
 #btn-show-content {
   padding: 20px;
