@@ -827,6 +827,9 @@ Gifts message
   width: 100%;
   pointer-events: none;
 }
+#gifts-content-wrapper .container {
+  pointer-events: auto;
+}
 
 /* ==========================================================================
 RSVP form

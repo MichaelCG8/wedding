@@ -226,13 +226,92 @@
             <h3 class="header">Gifts</h3>
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
-                    <p>We are thrilled to be celebrating our day with you, and there is no need to bring a gift, although there will be a box for cards! If, however, you feel that you would like to, a contribution to our honeymoon fund would be gratefully welcomed. Our bank details are (placeholder)</p>
+                    <p>We are thrilled to be celebrating our day with you, and there is no need to bring a gift, although there will be a box for cards! If, however, you feel that you would like to, a contribution to our honeymoon fund would be gratefully welcomed. <a href="#" data-toggle="modal" data-target="#bank-details-modal">Click here to see our bank details</a>.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
+
+<div class="modal fade" id="bank-details-modal" tabindex="-1" role="dialog" aria-labelledby="bank-details-title">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="bank-details-title">Bank details</h4>
+            </div>
+            <div class="modal-body">
+                <div id="bank-details-form">
+                    <p>Enter the passcode (included with your invite):</p>
+                    <input type="password" id="bank-details-passcode" class="form-control" autocomplete="off">
+                    <p id="bank-details-error" style="color: #b94a48; display: none; margin-top: 10px;">Incorrect passcode.</p>
+                </div>
+                <div id="bank-details-output" style="display: none;"></div>
+            </div>
+            <div class="modal-footer text-center">
+                <button type="button" id="bank-details-submit" class="btn btn-fill">Show details</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var $modal = $('#bank-details-modal');
+        var passcodeInput = document.getElementById('bank-details-passcode');
+        var errorEl = document.getElementById('bank-details-error');
+        var formEl = document.getElementById('bank-details-form');
+        var outputEl = document.getElementById('bank-details-output');
+        var submitBtn = document.getElementById('bank-details-submit');
+
+        async function reveal() {
+            errorEl.style.display = 'none';
+            var passcode = passcodeInput.value;
+            if (!passcode) { return; }
+            try {
+                var response = await fetch('details.html.encrypted');
+                if (!response.ok) throw new Error('fetch failed');
+                var b64 = (await response.text()).trim();
+                var data = Uint8Array.from(atob(b64), function (c) { return c.charCodeAt(0); });
+                var salt = data.slice(0, 16);
+                var iv = data.slice(16, 28);
+                var ciphertext = data.slice(28);
+
+                var keyMaterial = await crypto.subtle.importKey(
+                    'raw', new TextEncoder().encode(passcode), 'PBKDF2', false, ['deriveKey']
+                );
+                var key = await crypto.subtle.deriveKey(
+                    { name: 'PBKDF2', salt: salt, iterations: 250000, hash: 'SHA-256' },
+                    keyMaterial,
+                    { name: 'AES-GCM', length: 256 },
+                    false,
+                    ['decrypt']
+                );
+                var plaintext = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: iv }, key, ciphertext);
+                outputEl.innerHTML = new TextDecoder().decode(plaintext);
+                formEl.style.display = 'none';
+                submitBtn.style.display = 'none';
+                outputEl.style.display = 'block';
+            } catch (e) {
+                errorEl.style.display = 'block';
+            }
+        }
+
+        submitBtn.addEventListener('click', reveal);
+        passcodeInput.addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') { e.preventDefault(); reveal(); }
+        });
+        $modal.on('hidden.bs.modal', function () {
+            passcodeInput.value = '';
+            errorEl.style.display = 'none';
+            outputEl.innerHTML = '';
+            outputEl.style.display = 'none';
+            formEl.style.display = 'block';
+            submitBtn.style.display = '';
+        });
+        $modal.on('shown.bs.modal', function () { passcodeInput.focus(); });
+    });
+</script>
 
 <div class="modal fade" id="seating-plan-modal" tabindex="-1" role="dialog" aria-labelledby="seating-plan-title">
     <div class="modal-dialog modal-lg" role="document">
