@@ -566,6 +566,12 @@ Features-stack
     text-transform: lowercase;
     color: $txt-primary;
   }
+
+  .location {
+    font-style: italic;
+    margin-top: -10px;
+    padding-bottom: 10px;
+  }
 }
 
 /* ==========================================================================
