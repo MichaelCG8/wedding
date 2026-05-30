@@ -383,6 +383,21 @@ Social share buttons
 }
 
 /* ==========================================================================
+Event date (shown only when the hero image clips off the date)
+========================================================================== */
+.event-date {
+  display: none;
+  font-size: 22px;
+  color: $accent-color;
+  margin-bottom: 10px;
+}
+@media (min-width: 531px) {
+  .event-date {
+    display: block;
+  }
+}
+
+/* ==========================================================================
 Intro
 ========================================================================== */
 .intro span.icon {
